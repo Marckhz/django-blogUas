@@ -1,0 +1,114 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'index.css' %}">
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  </head>
+<body>
+  <div class="container-fluid">
+    <div class="row  hide-on-small-only">
+      <div class="container-fluid  blue darken-4">
+        <div class="row valign-wrapper">
+          <div class="col l2"> <img  class="right" src="{% static "images/uas.png"  %}" alt=""> </div>
+          <div class="col l8 "> <h2 class ="center-align white-text ">Universidad Autonoma de Sinaloa</h2> <br> <h3 class="center-align white-text">Unidad Academica Preparatoria Navolato</h3> </div>
+          <div class="col l2"> <img   class="left uas-logo" src="{% static "images/consolidacion.png" %}" alt=""></div>
+        </div>
+        <div class="row ">
+          <nav class="mynav amber darken-1">
+            <div class="nav-wrapper valign-wrapper">
+              <div class="brand-logo center">
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <ul >
+                  <li><a href="{% url 'main_feed' %}"> <h6>Inicio</h6> </a></li>
+                  <li><a href=""> <h6> Plan Curriculuar </h6></a></li>
+                  <li><a href="{% url 'calendar' %}"> <h6>Calendario Escolar </h6> </a></li>
+                  <li><a href="{% url 'programas_web' %}"> <h6> Programas </h6> </a></li>
+                  <li><a href="{% url 'organigrama' %}"><h6> Organigrama </h6> </a></li>
+                  <li><a href="{% url 'mision_vision' %}"><h6> Mision </h6> </a></li>
+                </ul>
+              </div>
+
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+
+
+
+      <nav class="blue darken-4  hide-on-med-and-up">
+        <div class="nav-wrapper">
+          <a class="brand-logo">UAS</a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        </div>
+      </nav>
+       <ul class=" sidenav" id="mobile-demo">
+        <li><a href="{% url 'main_feed' %}">Inicio</a></li>
+        <li><a href="#">Plan Curriculuar</a></li>
+        <li><a href="{% url 'calendar' %}">Calendario Escolar</a></li>
+        <li><a href="{% url 'programas_web' %}">Programas</a></li>
+        <li><a href="{% url 'organigrama' %}">Organigrama</a></li>
+        <li><a href="{% url 'mision_vision' %}">Mision</a></li>
+      </ul>
+
+          {% block content %}
+          {% endblock content %}
+
+
+    {% if request.user.username %}
+
+        {{ request.user.username }}
+      <div class="fixed-action-btn">
+        <a class="btn-floating btn-large red">
+          <i class="large material-icons">mode_edit</i>
+        </a>
+        <ul>
+          <div class="tooltip">
+            <li><span class="tooltiptext programas">Agregar Programas</span><a  href="{%  url 'programs_view' %}" class="btn-floating red"><i class="material-icons">menu_book</i></a></li>
+          </div>
+          <div class="tooltip">
+            <li><span class="tooltiptext calendar">Agregar Calendario</span><a href="{% url 'upload_calendar' %}"  class="btn-floating yellow darken-1"><i class="material-icons">calendar_today</i></a></li>
+          </div>
+          <div class="tooltip">
+            <li><span class="tooltiptext post">Crear un Post</span><a href="{% url 'add_post' %}" class="btn-floating green"><i class="material-icons">publish</i></a></li>
+          </div>
+          <div class="tooltip">
+            <li><span class="tooltiptext personal">Agregar Personal</span><a class="btn-floating blue"><i class="material-icons">face</i></a></li>
+          </div>
+          <div class="tooltip">
+            <li><span class="tooltiptext organigrama">Agregar Organigrama</span><a href="{% url 'upload_organigrama' %}" class="btn-floating pink"><i class="material-icons">apartment</i></a></li>
+          </div>
+          <div class="tooltip">
+            <li><span class="tooltiptext">Agreagar Curriculum</span><a href="{% url 'upload_curriculum' %}" class="btn-floating blue"></a></li>
+          </div>
+          <div class="tooltip">
+            <li><span class="tooltiptext">Salir</span><a href= "{% url 'logout' %}" class="btn-floating orange"><i class="material-icons">exit_to_app</i></a></li>
+          </div>
+
+        </ul>
+
+      </div>
+
+  </div>
+  {% endif %}
+
+
+
+    <!--JavaScript at end of body for optimized loading-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script type="text/javascript" src="{% static 'uas.js' %}"></script>
+    <script type="text/javascript" src="{% static 'new_js.js' %}"></script>
+
+
+  </body>
+</html>

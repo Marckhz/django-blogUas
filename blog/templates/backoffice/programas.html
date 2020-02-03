@@ -1,0 +1,43 @@
+{% extends 'base.html'%}
+
+<div class="container">
+  <div class="row ">
+{% block content %}
+      <div class="col l12">
+        <div class="message">
+          {% if messages %}
+            {% for message in messages %}
+                <li id="flash_message">{{message}}</li>
+            {% endfor %}
+          {% endif%}
+        </div>
+
+          <div class="card">
+            <div class="center-align">
+              <span class="card-title ">{{ title }}</span>
+            </div>
+            <div class="card-content">
+                <div class="row">
+                  <div class="col l10">
+                    <form  class="main-form" method="post">
+                        {%csrf_token%}
+                          {{ form.as_p }}
+                          <div class="row">
+                            <div class="col l6 ">
+                              <button class="btn waves-effect waves-light" type="submit" name="action">Guardar
+                              </button>
+                            </div>
+                          </div>
+                      </form>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col l12">
+                      <a href="{% url 'semestres_view'  %}"><button class="btn waves-effect blue darken-1">Actulizar
+                        </button></a>
+                    </div>
+                  </div>
+                </div>
+          </div>
+        </div>
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<div class="col  s12 l6">
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="row">
+      <div class="col s12 l12 ">
+        <label for="title">Titulo</label>
+        {{form.title }}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col  s12 l12">
+        <label for="">Contenido</label>
+        {{form.body}}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s12 l12">
+        {{ form.image }}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col l6 ">
+        <button class="btn waves-effect waves-light" type="submit" name="action">Guardar
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,37 @@
+.this-card{
+  width: 500px;
+}
+
+
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  top: -5px;
+  right: 105%;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+
+.mybody{
+
+height: 500px;
+}
+
+
+p .post-body{
+  text-align: justify;
+
+}

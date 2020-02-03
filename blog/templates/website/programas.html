@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="col l12">
+  <div class="row">
+  <h3 class=" center-align">Programas</h3>
+  </div>
+  <div class="row">
+  <div class="col l2 s12">
+    <ul class="collapsible popout">
+    <li>
+      <div class="collapsible-header"><i class="material-icons">menu_book</i>Semestre I</div>
+      <div class="collapsible-body">
+      <ul>
+        {% for row in query %}
+          {% if row.semester == 'I' %}
+        <a href="{{ row.link }}"><li> {{ row.name }}</li></a>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+  </li>
+  </ul>
+  </div>
+  <div class="col l2 s12">
+    <ul class="collapsible popout">
+    <li>
+      <div class="collapsible-header"><i class="material-icons">menu_book</i>Semestre II</div>
+      <div class="collapsible-body">
+      <ul>
+        {% for row in query %}
+          {% if row.semester == 'II' %}
+        <a href="{{ row.link }}"><li> {{ row.name }}</li></a>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+  </li>
+  </ul>
+  </div>
+  <div class="col l2 s12">
+    <ul class="collapsible popout">
+    <li>
+      <div class="collapsible-header"><i class="material-icons">menu_book</i>Semestre III</div>
+      <div class="collapsible-body">
+      <ul>
+        {% for row in query %}
+          {% if row.semester == 'III' %}
+        <a href="{{ row.link }}"><li> {{ row.name }}</li></a>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+  </li>
+  </ul>
+  </div>
+  <div class="col l2 s12">
+    <ul class="collapsible popout">
+    <li>
+      <div class="collapsible-header"><i class="material-icons">menu_book</i>Semestre IV</div>
+      <div class="collapsible-body">
+      <ul>
+        {% for row in query %}
+          {% if row.semester == 'IV' %}
+        <a href="{{ row.link }}"><li> {{ row.name }}</li></a>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+  </li>
+  </ul>
+  </div>
+  <div class="col l2 s12">
+    <ul class="collapsible popout">
+    <li>
+      <div class="collapsible-header"><i class="material-icons">menu_book</i>Semestre V</div>
+      <div class="collapsible-body">
+      <ul>
+        {% for row in query %}
+          {% if row.semester == 'V' %}
+        <a href="{{ row.link }}"><li> {{ row.name }}</li></a>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+  </li>
+  </ul>
+  </div>
+  <div class="col l2 s12">
+    <ul class="collapsible popout">
+    <li>
+      <div class="collapsible-header"><i class="material-icons">menu_book</i>Semestre VI</div>
+      <div class="collapsible-body">
+      <ul>
+        {% for row in query %}
+          {% if row.semester == 'VI' %}
+        <a href="{{ row.link }}"><li> {{ row.name }}</li></a>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+  </li>
+  </ul>
+  </div>
+
+
+  </div>
+</div>
+{% endblock %}

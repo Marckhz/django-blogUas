@@ -1,0 +1,20 @@
+{% extends 'base.html'%}
+
+{% block content %}
+
+<div class="container">
+  <div class="row">
+    <div class="col l12">
+
+      <ul>
+      {% for row in query %}
+       <li><a href="{% url 'single_subject' row.pk %}">{{  row.name }}</a></li>
+       <li>{{row.pk }}</li>
+       {% endfor %}
+       </ul<
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}

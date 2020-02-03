@@ -1,0 +1,26 @@
+{% extends 'base.html'%}
+
+{% block content %}
+    <form action="">
+      <div class="col l6 ">
+        <div class="card">
+            <span class="card-title">{{ title }}</span>
+          <ul>
+            <a href="{% url 'single_semester' semester='I' %}"><li>Semestre I</li></a>
+            <a href="{% url 'single_semester' semester='II' %}"><li>Semestre II</li></a>
+            <a href="{% url 'single_semester' semester='III' %}"><li>Semestre III</li></a>
+            <a href="{% url 'single_semester' semester='IV' %}"><li>Semestre IV</li></a>
+            <a href="{% url 'single_semester' semester='V' %}"><li>Semestre V</li></a>
+            <a href="{% url 'single_semester' semester='IV' %}"><li>Semestre VI</li></a>
+          </ul>
+        </div>
+      </div>
+      <div class="col l6">
+        <div class="card">
+          <span class="card-title">Elige un programa Para Actualizar</span>
+        </div>
+      </div>
+    </form>
+
+
+{% endblock %}
